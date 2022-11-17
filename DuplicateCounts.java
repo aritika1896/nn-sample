@@ -13,13 +13,9 @@ public class DuplicateCounts {
 		for(int i =0; i< str.length(); i++) {
 			if (mapChars.get(str.toLowerCase().charAt(i)) == null) {
 				mapChars.put(str.toLowerCase().charAt(i), 1);
-			}
-			for(int j = i+1; j < str.length(); j++) {
-				if(str.toLowerCase().charAt(i) == str.toLowerCase().charAt(j)) {
-					//System.out.println("matched");
-					Integer charVal = mapChars.get(str.toLowerCase().charAt(i));
-					mapChars.put(str.toLowerCase().charAt(i), charVal + 1);
-				}
+			} else {
+				Integer charVal = mapChars.get(str.toLowerCase().charAt(i));
+				mapChars.put(str.toLowerCase().charAt(i), charVal + 1);
 			}
 		}
 		
