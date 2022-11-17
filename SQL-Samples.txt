@@ -1,0 +1,45 @@
+student Table
+student_id
+name
+age
+registration
+
+course Table
+course_id
+coursename
+
+student_courses
+student_id
+course_id
+
+
+
+1)Find all students enrolled in "Math 101"
+
+select c.course_id, c.coursename, sc.student_id, s.name
+from student_courses sc
+Join course c
+on c.course_id = sc.course_id
+Join student s
+on s.student_id = sc.student_id
+where c.coursename = "Math 101"
+
+
+2) Find the 10 most popular courses
+
+select course_id, count (*) as "enrollments"
+from student_courses
+group by course_id
+having count(course_id) >= 10
+
+
+
+
+
+
+
+
+
+
+
+
